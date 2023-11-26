@@ -1,0 +1,423 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    background-color: #E5E5E5;
+}
+
+.btn {
+    box-sizing: border-box;
+    padding: 10px 40px;
+    border-radius: 6px;
+}
+
+.btn-blue {
+    background: #0FC5FF;
+    color: #fff;
+}
+
+.admin-page__main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.admin-page__main-catalog-link {
+    display: inline-flex;
+    max-width: 100vw;
+    width: 706px;
+    cursor: pointer;
+}
+
+.admin-page__main-catalog-link img {
+    display: block;
+}
+
+.admin-panel__wrap {
+    display: flex;
+    font-size: 11px;
+    line-height: 1.1;
+    min-height: 100vh;
+}
+
+.admin-panel__left {
+    background: #374050;
+    max-width: 180px;
+    width: 100%;
+}
+
+.admin-logo__link {
+    display: flex;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.admin-logo__img {
+    box-sizing: border-box;
+    padding: 18px 13px;
+    background: #fff;
+    display: inline-block;
+    border-radius: 0px 0px 18px 0px;
+}
+
+.admin-logo__text {
+    color: #fff;
+    box-sizing: border-box;
+    padding-top: 7px;
+}
+
+.admin-panel__category {
+    margin-top: 15px;
+    box-sizing: border-box;
+    padding-left: 33px;
+    color: #fff;
+}
+
+.admin-panel__right {
+    width: 100%;
+}
+
+.admin-panel__header {
+    display: flex;
+    background: #fff;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 18px 13px 0;
+    position: relative;
+}
+
+.admin-panel__header-nav-link {
+    display: inline-block;
+    padding-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.admin-panel__header-nav-link:after {
+    content: "";
+    display: inline-block;
+    background: inherit;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.admin-panel__header-user {
+    position: relative;
+}
+
+.user-logout {
+    display: none;
+}
+
+.admin-panel__header-user:hover .user-logout {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-100%);
+    left: 100%;
+    bottom: -60%;
+}
+
+.admin-panel__header-user-name {
+    color: #A6AFB8;
+}
+
+.admin-panel__content {
+    position: relative;
+}
+
+.product-list__add-btn {
+    position: absolute;
+    top: 25px;
+    right: 18px;
+}
+
+.admin__product-list .product-list__wrap {
+    width: 630px;
+    max-width: 100%;
+}
+
+.admin__product-list .product-list__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.admin__product-list .product-list__top-item {
+    box-sizing: border-box;
+    padding: 8px 18px;
+    color: #6E6E6F;
+    text-transform: uppercase;
+}
+
+.admin__product-list .product-list__bottom-item {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-bottom: 2px solid #C4C4C4;
+}
+
+.admin__product-list .product-list__bottom-item-props {
+    box-sizing: border-box;
+    padding: 8px 18px;
+    margin-bottom: 0;
+    word-break: break-all;
+}
+
+.admin__product-list .product-list__bottom-item-props.props-arr {
+    display: block;
+}
+
+.admin__product-list .product-list__bottom {
+    background: #fff;
+}
+
+.admin__product-list .product-list__bottom-item:first-child {
+    border-top: 2px solid #C4C4C4;
+}
+
+.admin__product-list .product-list__bottom-item-props.props-arr > * {
+    margin-bottom: 5px;
+}
+
+.admin__form {
+    min-height: 100vh;
+    background: #374050;
+    box-sizing: border-box;
+    padding: 27px 12px ;
+    color: #fff;
+}
+
+.admin__form-wrap {
+    max-width: 630px;
+}
+
+.admin__form-detail-top {
+    display: grid;
+    grid-template-columns: auto 80px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.admin__form-detail-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.admin__form-detail-close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(/image/admin/close-cross.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.admin__form-detail-control {
+    display: flex;
+    gap: 18px;
+}
+
+.admin__form-detail-btns {
+    display: flex;
+    gap: 3px;
+}
+
+.admin__form-detail-btn {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background: #212630;
+}
+
+.admin__form-detail-btns {
+    display: flex;
+    gap: 3px;
+}
+
+.admin__form-detail-btn.change {
+    background-image: url(/image/admin/change-ico.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+}
+
+.admin__form-detail-btn.delete {
+    background-image: url(/image/admin/remove-ico.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+}
+
+.products-detail__proplist {
+    display: grid;
+    gap: 18px;
+}
+
+.products-detail__propitem {
+    display: grid;
+    grid-template-columns: 50px auto;
+    gap: 28px;
+}
+
+.products-detail__propvalue {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.products-detail__propkey {
+    color: #c3c5ca;
+}
+
+.admin__form-login {
+    display: grid;
+    width: fit-content;
+    gap: 18px;
+    position: absolute;
+    z-index: 1;
+    top: 5vw;
+    left: 40vw;
+}
+
+.form__input {
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    background: #fff;
+}
+
+.form-change-product {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    max-width: 100%;
+    width: 472px;
+    align-items: flex-start;
+}
+
+.form-change-product__field {
+    width: 100%;
+}
+
+.form-change-product__field-title {
+    margin-bottom: 8px;
+    font-size: 9px;
+}
+
+.form-change-product__field-value .form__input {
+    width: 100%;
+}
+
+.form-dropdown__checker {
+    position: relative;
+    cursor: pointer;
+}
+
+.form-dropdown__checker:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #c4c4c4;
+    border-right: 2px solid #c4c4c4;
+    right: 12px;
+    top: 10px;
+    transform: rotate(45deg);
+}
+
+.form-dropdown.active .form-dropdown__checker:after {
+    visibility: hidden;
+}
+
+.form-dropdown__cont {
+    position: relative;
+}
+
+.form-dropdown__list {
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+    color: #000;
+    transform: translateY(100%);
+    border-top: 2px solid #C4C4C4;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    opacity: 0;
+    height: 0px;
+}
+
+.form-dropdown.active .form-dropdown__list {
+    opacity: 1;
+    height: auto;
+}
+
+.form-dropdown__item:hover {
+    cursor: pointer;
+    background: #50a9fc;
+}
+
+.form-dropdown__item {
+    border-radius: 0;
+}
+
+.form-change-product__field-title.big {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.form-todolist__list {
+    display: grid;
+    gap: 13px;
+    margin-bottom: 13px;
+}
+
+.js__todo-item {
+    display: grid;
+    gap: 9px;
+}
+
+.js__todo-item-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 14px;
+    gap: 0 11px;
+}
+
+.js__todo-item-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 14px;
+    gap: 0 11px;
+}
+
+.js__todo-del {
+    background-image: url(/image/admin/remove-ico.svg);
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.form-todolist__added-btn {
+    display: inline-flex;
+    color: #0FC5FF;
+    border-bottom: 1px dashed #5FC6F1;
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    cursor: pointer;
+    margin-bottom: 17px;
+}

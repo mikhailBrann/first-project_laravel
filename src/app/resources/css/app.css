@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page__title {
+    margin: 20px 0 30px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header__top-wrap {
+    display: flex;
+}
+
+.site-header__auth {
+    margin-left: auto;
+}
+
+.site-header__nav-list {
+    display: flex;
+    gap: 15px;
+}
+
+.site-header__top {
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+.to-catalog {
+    display: inline-block;
+    margin-top: 30px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background: silver;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.to-catalog:hover {
+    box-shadow: 0 0 6px #c0c0c085;
+}
+
+.products__list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 25px;
+}
+
+.products__paginate-wrap {
+    margin: 20px 0 30px;
+}
+
+.products__item {
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.products__item:hover {
+    box-shadow: 0 0 6px silver;
+}
+
+.products__item-name {
+    font-size: 15px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.products__item-status {
+    margin-top: auto;
+}
+
+.status__avaliable {
+    color: green;
+}
+
+.status__no-avaliable {
+    color: silver;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 15px;
+    font-family: sans-serif;
+    margin: 20px 0 30px;
+}
+
+.product-detail__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.product-detail__article {
+    font-size: 13px;
+}
+
+.product-detail__title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.product-detail__data-list {
+    box-sizing: border-box;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 0 6px silver;
+    margin: 20px 0 30px;
+}
+
+.product-detail__data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.product-detail__data-item:nth-child(odd) {
+    border-right: 2px solid silver;
+}

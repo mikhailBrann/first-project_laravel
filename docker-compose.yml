@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+
+  # Web Server Service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - app
+      - db
+  db:
+    image: postgres
+    container_name: postgres-laravel
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment: 
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+  # Application Service
+  app:
+    container_name: first-step-laravel
+    build: 
+      context: ./php
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
+    working_dir: /var/www
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      SMTP_EMAIL: ${SMTP_EMAIL}
+      SMTP_PASS: ${SMTP_PASS}
+      PGADMIN_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_PASSWORD: ${PGADMIN_PASS}
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-laravel
+    ports:
+      - "5050:80"
+    depends_on:
+      - db 
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASS}
